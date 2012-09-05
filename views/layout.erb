@@ -1,7 +1,34 @@
-<html>  
-  <head></head>  
-  <body>
-  	<p>Our App</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dead Drop</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
+  <script src="js/underscore-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js" type="text/javascript"></script>
+  <script src="js/backbone-min.js"></script>
+  <script src="js/script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>body { padding-top: 60px; }</style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="brand">Trinity Church Q&A</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
     <%= yield %>
-  </body>  
-</html>  
+    <hr>
+    <footer>
+	  <p>Created by <a href="http://ericfarkas.com">Eric Farkas</a>, powered by <a href="http://github.com/speric/dead-drop">dead-drop</a></p>
+	</footer>
+  </div>
+</body>
+</html>

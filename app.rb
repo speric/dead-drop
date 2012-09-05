@@ -1,20 +1,18 @@
 require 'sinatra'
+require 'sinatra/activerecord'
 require 'yaml'
-require 'active_record'
 
-DATABASE = YAML::load('config/database.yml')
+require './models/incoming_message'
 
-ActiveRecord::Base.establish_connection(
-  adapter: "mysql",
-  host: DATABASE['host'],
-  database: DATABASE['database'],
-  username: DATABASE['username'],
-  password: DATABASE['password']
-)
+DB_CONFIG = YAML::load(File.open('config/database.yml'))
+
+database_url = "mysql://#{DB_CONFIG['username']}:#{DB_CONFIG['password']}@#{DB_CONFIG['host']}:#{DB_CONFIG['port']}/#{DB_CONFIG['database']}"
+
+set :database, database_url
 
 class DeadDropApp < Sinatra::Base
   get '/' do
-    erb :default
-    # renders views/default.erb  
+  	@messages = IncomingMessage.all
+    erb :index
   end
 end 
