@@ -1,4 +1,5 @@
 require './config/environment.rb'
+require 'gmail'
 
 gmail = Gmail.new(EMAIL_CONFIG['email'], EMAIL_CONFIG['password'])
 

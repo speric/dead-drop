@@ -2,7 +2,6 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'yaml'
 require 'erubis'
-require 'gmail'
 require './models/incoming_message'
 
 DB_CONFIG      = YAML::load(File.open('config/database.yml'))
