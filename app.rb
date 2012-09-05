@@ -4,12 +4,12 @@ class DeadDropApp < Sinatra::Base
   end
   
   get '/' do
-  	@messages = IncomingMessage.all
-    erubis  :index
+    @messages = IncomingMessage.all
+    erubis :index
   end
 
   get '/message/:id' do
     @message = IncomingMessage.find(params[:id])
-    erubis  :message
+    erubis :message
   end
 end 
