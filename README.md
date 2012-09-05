@@ -1,4 +1,4 @@
 dead-drop
 =========
 
-Q&amp;A app for Trinity Church
+Q&amp;A Sinatra-based app for Trinity Church
