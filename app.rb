@@ -4,12 +4,14 @@ class DeadDropApp < Sinatra::Base
   end
   
   get '/' do
+    ActiveRecord::Base.connection.reconnect!
     @messages = IncomingMessage.all
-    erubis :index
+    erb :index
   end
 
   get '/message/:id' do
+    ActiveRecord::Base.connection.reconnect!
     @message = IncomingMessage.find(params[:id])
-    erubis :message
+    erb :message
   end
 end 
